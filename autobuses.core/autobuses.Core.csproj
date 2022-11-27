@@ -86,6 +86,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Conexion.cs" />
+    <Compile Include="Entidades\Autobus.cs" />
+    <Compile Include="Entidades\Boleto.cs" />
+    <Compile Include="Entidades\Destino.cs" />
+    <Compile Include="Entidades\Estado.cs" />
+    <Compile Include="Entidades\Municipio.cs" />
+    <Compile Include="Entidades\Operador.cs" />
+    <Compile Include="Entidades\Partida.cs" />
+    <Compile Include="Entidades\Pasajero.cs" />
+    <Compile Include="Entidades\Ruta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
