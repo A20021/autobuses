@@ -20,7 +20,7 @@ namespace autobuses.core.Entidades
                 Conexion conexion = new Conexion();
                 if (conexion.OpenConnection())
                 {
-                    string query = "SELECT * FROM partida;";
+                    string query = "SELECT * FROM partida ORDER BY id;";
                     MySqlCommand commnd = new MySqlCommand(query, conexion.Connection);
                     MySqlDataReader dataReader = commnd.ExecuteReader();
                     while (dataReader.Read())

@@ -214,18 +214,18 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Estado\Index.cshtml" />
+    <Content Include="Views\Municipio\Index.cshtml" />
+    <Content Include="Views\Operador\Index.cshtml" />
+    <Content Include="Views\Boleto\Index.cshtml" />
+    <Content Include="Views\Pasajero\Index.cshtml" />
+    <Content Include="Views\Partida\Index.cshtml" />
+    <Content Include="Views\Destino\Index.cshtml" />
+    <Content Include="Views\Ruta\Index.cshtml" />
+    <Content Include="Views\Autobus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Autobus\" />
-    <Folder Include="Views\Boleto\" />
-    <Folder Include="Views\Destino\" />
-    <Folder Include="Views\Municipio\" />
-    <Folder Include="Views\Operador\" />
-    <Folder Include="Views\Partida\" />
-    <Folder Include="Views\Pasajero\" />
-    <Folder Include="Views\Ruta\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
