@@ -14,5 +14,11 @@ namespace autobuses.Controllers
             List<Boleto> boletos = Boleto.GetAllBoletos();
             return View(boletos);
         }
+
+        public ActionResult Guardar(int numeroBoleto)
+        {
+            Boleto.Guardar(numeroBoleto);
+            return RedirectToAction("Index");
+        }
     }
 }

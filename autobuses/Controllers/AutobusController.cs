@@ -14,5 +14,10 @@ namespace autobuses.Controllers
             List<Autobus> autbuses = Autobus.GetAllAutobuses();
             return View(autbuses);
         }
+
+        public ActionResult Guardar(String marca, String color, String placa, int matricula, int idRuta){
+            Autobus.Guardar(marca, color, placa, matricula, idRuta);
+            return RedirectToAction("Index");
+        }
     }
 }

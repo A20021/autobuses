@@ -61,5 +61,60 @@ namespace autobuses.core.Entidades
             }
             return rutas;
         }
+
+        public static bool Guardar(String descripcion, int idEstado, int idPasajero, int idDestino, int idPartida)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "INSERT INTO ruta (descripcion, idEstado, idPasajero, idDestino, idPartida) Values (@descripcion, @idEstado, @idPasajero, @idDestino, @idPartida)";
+                    cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                    cmd.Parameters.AddWithValue("@idEstado", idEstado);
+                    cmd.Parameters.AddWithValue("@idPasajero", idPasajero);
+                    cmd.Parameters.AddWithValue("@idDestino", idDestino);
+                    cmd.Parameters.AddWithValue("@idPartida", idPartida);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
+        public bool Editar(String descripcion, int idEstado, int idPasajero, int idDestino, int idPartida, int id)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "UPDATE ruta SET descripcion = @descripcion, idEstado = @idEstado, idPasajero = @idPasajero, idDestino = @idDestino, idPartida = @idPartida WHERE id = @id;";
+                    cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                    cmd.Parameters.AddWithValue("@idEstado", idEstado);
+                    cmd.Parameters.AddWithValue("@idPasajero", idPasajero);
+                    cmd.Parameters.AddWithValue("@idDestino", idDestino);
+                    cmd.Parameters.AddWithValue("@idPartida", idPartida);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
     }
 }

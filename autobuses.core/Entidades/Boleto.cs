@@ -39,5 +39,52 @@ namespace autobuses.core.Entidades
             }
             return boletos;
         }
+
+        public static bool Guardar(int numeroBoleto)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "INSERT INTO boleto (numeroBoleto) Values (@numeroBoleto)";
+                    cmd.Parameters.AddWithValue("@numeroBoleto", numeroBoleto);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
+        public bool Editar(int numeroBoleto, int id)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "UPDATE boleto SET numeroBoleto = @numeroBoleto WHERE id = @id;";
+                    cmd.Parameters.AddWithValue("@numeroBoleto", numeroBoleto);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
     }
 }

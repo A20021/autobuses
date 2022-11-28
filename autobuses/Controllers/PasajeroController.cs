@@ -14,5 +14,11 @@ namespace autobuses.Controllers
             List<Pasajero> pasajeros = Pasajero.GetAllPasajeros();
             return View(pasajeros);
         }
+
+        public ActionResult Guardar(int idBoleto, int numeroAsiento)
+        {
+            Pasajero.Guardar(idBoleto, numeroAsiento);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -14,5 +14,11 @@ namespace autobuses.Controllers
             List<Ruta> rutas = Ruta.GetAllRutas();
             return View(rutas);
         }
+
+        public ActionResult Guardar(String descripcion, int idEstado, int idPasajero, int idDestino, int idPartida)
+        {
+            Ruta.Guardar(descripcion, idEstado, idPasajero, idDestino, idPartida);
+            return RedirectToAction("Index");
+        }
     }
 }

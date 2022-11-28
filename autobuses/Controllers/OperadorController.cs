@@ -15,5 +15,11 @@ namespace autobuses.Controllers
             List<Operador> operadores = Operador.GetAllOperadores();
             return View(operadores);
         }
+
+        public ActionResult Guardar(String nombre, int edad)
+        {
+            Operador.Guardar(nombre, edad);
+            return RedirectToAction("Index");
+        }
     }
 }

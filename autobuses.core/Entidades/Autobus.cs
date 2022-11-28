@@ -52,5 +52,56 @@ namespace autobuses.core.Entidades
             }
             return autobuses;
         }
+
+        public static bool Guardar(String marca, String color, String placa, int matricula, int idRuta){
+            bool result = false;
+            try{
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection()){
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "INSERT INTO autobus (marca, color, placa, matricula, idRuta) Values (@marca, @color, @placa, @matricula, @idRuta)";
+                    cmd.Parameters.AddWithValue("@marca", marca);
+                    cmd.Parameters.AddWithValue("@color", color);
+                    cmd.Parameters.AddWithValue("@placa", placa);
+                    cmd.Parameters.AddWithValue("@matricula", matricula);
+                    cmd.Parameters.AddWithValue("@idRuta", idRuta);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+                }
+            }catch(Exception ex){
+                throw ex;
+            }
+            return result;
+        }
+
+        public bool Editar(String marca, String color, String placa, int matricula, int idRuta, int id)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "UPDATE autobus SET marca = @marca, color = @color, placa = @placa, matricula = @matricula, idRuta = @idRuta WHERE id = @id;";
+                    cmd.Parameters.AddWithValue("@marca", marca);
+                    cmd.Parameters.AddWithValue("@color", color);
+                    cmd.Parameters.AddWithValue("@placa", placa);
+                    cmd.Parameters.AddWithValue("@matricula", matricula);
+                    cmd.Parameters.AddWithValue("@idRuta", idRuta);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
     }
 }

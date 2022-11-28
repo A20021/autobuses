@@ -14,5 +14,11 @@ namespace autobuses.Controllers
             List<Municipio> municipios = Municipio.GetAllMunicipios();
             return View(municipios);
         }
+
+        public ActionResult Guardar(String nombre, int idEstado)
+        {
+            Municipio.Guardar(nombre, idEstado);
+            return RedirectToAction("Index");
+        }
     }
 }

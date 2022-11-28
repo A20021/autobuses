@@ -14,5 +14,11 @@ namespace autobuses.Controllers
             List<Partida> partidas = Partida.GetAllPartidas();
             return View(partidas);
         }
+
+        public ActionResult Guardar(int idMunicipio)
+        {
+            Partida.Guardar(idMunicipio);
+            return RedirectToAction("Index");
+        }
     }
 }

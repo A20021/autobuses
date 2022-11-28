@@ -14,5 +14,11 @@ namespace autobuses.Controllers
             List<Destino> destinos = Destino.GetAllDestinos();
             return View(destinos);
         }
+
+        public ActionResult Guardar(int idMunicipio)
+        {
+            Destino.Guardar(idMunicipio);
+            return RedirectToAction("Index");
+        }
     }
 }

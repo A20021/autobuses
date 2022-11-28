@@ -44,5 +44,52 @@ namespace autobuses.core.Entidades
             }
             return partidas;
         }
+
+        public static bool Guardar(int idMunicipio)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "INSERT INTO partida (idMunicipio) Values (@idMunicipio)";
+                    cmd.Parameters.AddWithValue("@idMunicipio", idMunicipio);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
+        public bool Editar(int idMunicipio, int id)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "UPDATE partida SET idMunicipio = @idMunicipio WHERE id = @id;";
+                    cmd.Parameters.AddWithValue("@idMunicipio", idMunicipio);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
     }
 }

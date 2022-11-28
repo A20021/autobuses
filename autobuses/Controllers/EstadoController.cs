@@ -14,5 +14,11 @@ namespace autobuses.Controllers
             List<Estado> estados = Estado.GetAllEstados();
             return View(estados);
         }
+
+        public ActionResult Guardar(String nombre)
+        {
+            Estado.Guardar(nombre);
+            return RedirectToAction("Index");
+        }
     }
 }
