@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Registro de boleto</h1>
+                <h1 class="page-header">Registro de partida</h1>
             </div>
         </div>
 
@@ -10,10 +10,10 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form action="@Url.Action("Guardar", "Boleto")">
+                        <form action="@Url.Action("Guardar", "Partida")">
                             <div class="form-group">
-                                <label>Boleto: :</label>
-                                <input class="form-control" name="numeroBoleto" />
+                                <label>Id municipio: </label>
+                                <input class="form-control" name="idMunicipio" />
                                 
                             </div>
                             <button class="btn btn-success" type="submit">Guardar</button>
@@ -24,6 +24,3 @@
         </div>
     </div>
 </div>
-
-
-
