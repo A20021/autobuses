@@ -15,6 +15,11 @@ namespace autobuses.Controllers
             return View(autbuses);
         }
 
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult Guardar(String marca, String color, String placa, int matricula, int idRuta){
             Autobus.Guardar(marca, color, placa, matricula, idRuta);
             return RedirectToAction("Index");

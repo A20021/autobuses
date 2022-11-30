@@ -24,9 +24,9 @@ namespace autobuses.core.Entidades
                 Conexion conexion = new Conexion();
                 if (conexion.OpenConnection())
                 {
-                    string query = "SELECT * FROM autobus;";
-                    MySqlCommand commnd = new MySqlCommand(query, conexion.Connection);
-                    MySqlDataReader dataReader = commnd.ExecuteReader();
+                    string query = "SELECT * FROM autobusesdb.autobus;";
+                    MySqlCommand command = new MySqlCommand(query, conexion.Connection);
+                    MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
                         Autobus autobus = new Autobus();
@@ -46,9 +46,8 @@ namespace autobuses.core.Entidades
                     conexion.CloseConnection();
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
+            catch (Exception ex) {
+                
             }
             return autobuses;
         }
@@ -59,7 +58,7 @@ namespace autobuses.core.Entidades
                 Conexion conexion = new Conexion();
                 if (conexion.OpenConnection()){
                     MySqlCommand cmd = conexion.Connection.CreateCommand();
-                    cmd.CommandText = "INSERT INTO autobus (marca, color, placa, matricula, idRuta) Values (@marca, @color, @placa, @matricula, @idRuta)";
+                    cmd.CommandText = "INSERT INTO `autobus` (`marca`, `color`, `placa`, `matricula`, `idRuta`) Values (@marca, @color, @placa, @matricula, @idRuta)";
                     cmd.Parameters.AddWithValue("@marca", marca);
                     cmd.Parameters.AddWithValue("@color", color);
                     cmd.Parameters.AddWithValue("@placa", placa);
@@ -69,7 +68,7 @@ namespace autobuses.core.Entidades
                     result = cmd.ExecuteNonQuery() == 1;
                 }
             }catch(Exception ex){
-                throw ex;
+                
             }
             return result;
         }
