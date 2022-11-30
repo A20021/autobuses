@@ -54,7 +54,7 @@ namespace autobuses.core.Entidades
             return result;
         }
 
-        public bool Editar(String nombre, int id)
+        public static bool Editar(String nombre, int id)
         {
             bool result = false;
             try
@@ -70,6 +70,30 @@ namespace autobuses.core.Entidades
                     result = cmd.ExecuteNonQuery() == 1;
 
 
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result;
+        }
+
+        public static bool Eliminar(int id)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "DELETE from estado WHERE id = @id;";
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+
+                    cmd.Parameters.Clear();
                 }
             }
             catch (Exception ex)

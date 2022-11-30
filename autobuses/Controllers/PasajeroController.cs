@@ -25,5 +25,17 @@ namespace autobuses.Controllers
             Pasajero.Guardar(idBoleto, numeroAsiento);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Editar(int idBoleto, int numeroAsiento, int id)
+        {
+            Pasajero.Editar( idBoleto,  numeroAsiento,  id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            Autobus.Eliminar(id);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -25,5 +25,17 @@ namespace autobuses.Controllers
             Partida.Guardar(idMunicipio);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Editar(int idMunicipio, int id)
+        {
+            Partida.Editar(idMunicipio, id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            Autobus.Eliminar(id);
+            return RedirectToAction("Index");
+        }
     }
 }

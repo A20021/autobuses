@@ -27,5 +27,17 @@ namespace autobuses.Controllers
             Operador.Guardar(nombre, edad);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Editar(String nombre, int edad, int id)
+        {
+            Operador.Editar(nombre, edad, id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            Autobus.Eliminar(id);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -11,8 +11,8 @@ namespace autobuses.Controllers
     {
         // GET: Autobus
         public ActionResult Index(){
-            List<Autobus> autbuses = Autobus.GetAllAutobuses();
-            return View(autbuses);
+            List<Autobus> autobuses = Autobus.GetAllAutobuses();
+            return View(autobuses);
         }
 
         public ActionResult Registro()
@@ -22,6 +22,18 @@ namespace autobuses.Controllers
 
         public ActionResult Guardar(String marca, String color, String placa, int matricula, int idRuta){
             Autobus.Guardar(marca, color, placa, matricula, idRuta);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Editar(String marca, String color, String placa, int matricula, int idRuta, int id)
+        {
+            Autobus.Editar(marca, color, placa, matricula, idRuta, id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            Autobus.Eliminar(id);
             return RedirectToAction("Index");
         }
     }

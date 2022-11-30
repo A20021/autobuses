@@ -53,7 +53,7 @@
                                                 @r.Partida.Id
                                             </td>
                                             <td>
-                                                <a class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a>
+                                                <a href="@Url.Action("Registro", "Ruta", new {id = r.Id})" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a>
                                                 <a class="btn btn-danger"><i class="fa fa-trash-o"></i> Eliminar</a>
                                             </td>
                                         </tr>

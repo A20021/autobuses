@@ -52,6 +52,7 @@ namespace autobuses.core.Entidades
             return autobuses;
         }
 
+
         public static bool Guardar(String marca, String color, String placa, int matricula, int idRuta){
             bool result = false;
             try{
@@ -73,7 +74,7 @@ namespace autobuses.core.Entidades
             return result;
         }
 
-        public bool Editar(String marca, String color, String placa, int matricula, int idRuta, int id)
+        public static bool Editar(String marca, String color, String placa, int matricula, int idRuta, int id)
         {
             bool result = false;
             try
@@ -98,6 +99,30 @@ namespace autobuses.core.Entidades
             catch (Exception ex)
             {
                 throw ex;
+            }
+            return result;
+        }
+
+        public static bool Eliminar(int id)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.Connection.CreateCommand();
+                    cmd.CommandText = "DELETE from autobus WHERE id = @id;";
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+
+                    cmd.Parameters.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
             return result;
         }
