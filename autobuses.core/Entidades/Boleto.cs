@@ -35,7 +35,7 @@ namespace autobuses.core.Entidades
                 }
             }
             catch (Exception ex){
-                throw ex;
+                
             }
             return boletos;
         }
@@ -57,7 +57,7 @@ namespace autobuses.core.Entidades
             }
             catch (Exception ex)
             {
-                throw ex;
+                
             }
             return result;
         }
@@ -82,7 +82,7 @@ namespace autobuses.core.Entidades
             }
             catch (Exception ex)
             {
-                throw ex;
+               
             }
             return result;
         }

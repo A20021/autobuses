@@ -16,6 +16,12 @@ namespace autobuses.Controllers
             return View(operadores);
         }
 
+
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult Guardar(String nombre, int edad)
         {
             Operador.Guardar(nombre, edad);

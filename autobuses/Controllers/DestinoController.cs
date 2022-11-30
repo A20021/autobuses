@@ -15,6 +15,11 @@ namespace autobuses.Controllers
             return View(destinos);
         }
 
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult Guardar(int idMunicipio)
         {
             Destino.Guardar(idMunicipio);

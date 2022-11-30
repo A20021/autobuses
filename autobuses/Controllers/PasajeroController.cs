@@ -15,6 +15,11 @@ namespace autobuses.Controllers
             return View(pasajeros);
         }
 
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult Guardar(int idBoleto, int numeroAsiento)
         {
             Pasajero.Guardar(idBoleto, numeroAsiento);

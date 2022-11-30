@@ -224,26 +224,33 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Autobus\Index.cshtml" />
+    <Content Include="Views\Boleto\Index.cshtml" />
+    <Content Include="Views\Boleto\Registro.cshtml" />
+    <Content Include="Views\Destino\Index.cshtml" />
+    <Content Include="Views\Destino\Registro.cshtml" />
+    <Content Include="Views\Estado\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Municipio\Index.cshtml" />
+    <Content Include="Views\Municipio\Registro.cshtml" />
+    <Content Include="Views\Operador\Index.cshtml" />
+    <Content Include="Views\Operador\Registro.cshtml" />
+    <Content Include="Views\Partida\Index.cshtml" />
+    <Content Include="Views\Partida\Registro.cshtml" />
+    <Content Include="Views\Pasajero\Index.cshtml" />
+    <Content Include="Views\Pasajero\Registro.cshtml" />
+    <Content Include="Views\Ruta\Index.cshtml" />
+    <Content Include="Views\Ruta\Registro.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Estado\Index.cshtml" />
-    <Content Include="Views\Municipio\Index.cshtml" />
-    <Content Include="Views\Operador\Index.cshtml" />
-    <Content Include="Views\Boleto\Index.cshtml" />
-    <Content Include="Views\Pasajero\Index.cshtml" />
-    <Content Include="Views\Partida\Index.cshtml" />
-    <Content Include="Views\Destino\Index.cshtml" />
-    <Content Include="Views\Ruta\Index.cshtml" />
-    <Content Include="Views\Autobus\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Autobus\Registro.cshtml" />
+    <Content Include="Views\Estado\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Registro\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -32,7 +32,7 @@ namespace autobuses.core.Entidades
                 }
             }catch(Exception ex)
             {
-                throw ex;
+
             }
             return estados;
         }
@@ -49,7 +49,7 @@ namespace autobuses.core.Entidades
                     result = cmd.ExecuteNonQuery() == 1;
                 }
             }catch(Exception ex){
-                throw ex;
+
             }
             return result;
         }
@@ -74,7 +74,7 @@ namespace autobuses.core.Entidades
             }
             catch (Exception ex)
             {
-                throw ex;
+
             }
             return result;
         }

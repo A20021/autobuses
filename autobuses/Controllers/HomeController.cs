@@ -13,6 +13,11 @@ namespace autobuses.Controllers
             return View();
         }
 
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

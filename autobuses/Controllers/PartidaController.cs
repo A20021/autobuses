@@ -15,6 +15,11 @@ namespace autobuses.Controllers
             return View(partidas);
         }
 
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult Guardar(int idMunicipio)
         {
             Partida.Guardar(idMunicipio);
