@@ -15,9 +15,26 @@ namespace autobuses.Controllers
             return View(boletos);
         }
 
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult Guardar(int numeroBoleto)
         {
             Boleto.Guardar(numeroBoleto);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Editar(int numeroBoleto)
+        {
+            Boleto.Guardar(numeroBoleto);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            Autobus.Eliminar(id);
             return RedirectToAction("Index");
         }
     }

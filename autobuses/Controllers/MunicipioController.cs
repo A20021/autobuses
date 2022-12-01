@@ -15,9 +15,26 @@ namespace autobuses.Controllers
             return View(municipios);
         }
 
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
         public ActionResult Guardar(String nombre, int idEstado)
         {
             Municipio.Guardar(nombre, idEstado);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Editar(String nombre, int idEstado, int id)
+        {
+            Municipio.Editar(nombre, idEstado, id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            Autobus.Eliminar(id);
             return RedirectToAction("Index");
         }
     }
