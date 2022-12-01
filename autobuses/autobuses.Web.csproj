@@ -222,6 +222,7 @@
     <Content Include="Views\Destino\Index.cshtml" />
     <Content Include="Views\Ruta\Index.cshtml" />
     <Content Include="Views\Autobus\Index.cshtml" />
+    <Content Include="Views\Estado\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

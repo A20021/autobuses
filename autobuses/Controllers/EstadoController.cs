@@ -20,5 +20,10 @@ namespace autobuses.Controllers
             Estado.Guardar(nombre);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Registro()
+        {
+            return View();
+        }
     }
 }
